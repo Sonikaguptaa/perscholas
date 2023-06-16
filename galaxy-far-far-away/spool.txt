@@ -1,0 +1,6 @@
+total 0
+-rw-r--r-- 1 ashon 197609 0 May 30 12:27 commands.txt
+-rw-r--r-- 1 ashon 197609 0 May 30 12:35 luke.txt,
+-rw-r--r-- 1 ashon 197609 0 May 30 12:35 obi_wan.txt
+drwxr-xr-x 1 ashon 197609 0 May 30 13:07 tatooine/
+-rw-r--r-- 1 ashon 197609 0 May 30 16:53 spool.txt
