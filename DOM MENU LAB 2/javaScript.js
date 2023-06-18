@@ -27,6 +27,7 @@ var menuLinks = [
     ],
   },
 ];
+
 //1.0
 
 let mainEl = document.querySelector("main");
@@ -50,6 +51,7 @@ topMenuE1.style.backgroundColor = "var(--top-menu-bg)";
 
 
 topMenuE1.classList.add("flex-around");
+
 //3.0
 
 for (let i = 0; i < menuLinks.length; i++) {
@@ -66,6 +68,7 @@ for (let i = 0; i < menuLinks.length; i++) {
   
   topMenuE1.appendChild(mlink);
 }
+
 //4.0
 
 let subMenuE1 = document.querySelector("#sub-menu");
@@ -80,7 +83,9 @@ subMenuE1.classList.add("flex-around");
 subMenuE1.style.position = "absolute";
 
 subMenuE1.style.top = "0";
+
 //5.1
+
 let topMenuLinks = topMenuE1.querySelectorAll("a");
 
 var showingSubMenu = false;
@@ -101,6 +106,7 @@ topMenuE1.addEventListener("click", function (evt) {
     subMenuE1.style.top = "0";
     return;
   }
+  
   //5.4
 
   if (evt.target.textContent === "about") {
@@ -109,8 +115,10 @@ topMenuE1.addEventListener("click", function (evt) {
   for (let item of topMenuLinks) {
     item.classList.remove("active");
   }
+  
   //5.5
   evt.target.classList.add("active");
+  
   //5.6
   let textName = evt.target.textContent;
 
@@ -133,6 +141,7 @@ topMenuE1.addEventListener("click", function (evt) {
     showingSubMenu = false;
     subMenuE1.style.top = "0";
   }
+  
   //5.7
 
   function buildSubMenu(subArray) {
@@ -145,24 +154,30 @@ topMenuE1.addEventListener("click", function (evt) {
     }
   }
 });
-// 6.0(Maybe, untested)
+
 const onSubMenuClick = (event) => {
+  
   // 6.0
   event.preventDefault();
   if (event.target.tagName !== "A") {
     return undefined;
   }
   console.log(event.target.textContent);
+  
   // 6.1
   showingSubMenu = false;
   subMenuE1.style.top = 0;
+  
   // 6.2
   for (const link of topMenuLinks) {
     link.classList.remove("active");
   }
+  
   // 6.3
   mainEl.innerHTML = `<h1>${event.target.textContent}</h1>`;
+  
   // 6.4
+  
 };
 
 subMenuE1.addEventListener("click", onSubMenuClick);
